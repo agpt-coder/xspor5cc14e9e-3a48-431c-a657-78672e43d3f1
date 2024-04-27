@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "xspor"
+version = "0.1.0"
+description = "In the PHP MVC application, the global entry point is `index.php`, which initializes the whole application. This initialization involves loading `composer/autoload.php` for class autoloading, necessary for utilizing PHP classes without manual includes. The application's routing mechanism is handled by `routes.php`, which directs URL paths to their respective controllers based on the request. For example, the path `/event/display` routes to `CfeatureEventDisplay.php`, a controller that fetches event data through `MfeatureEvent.php` model and renders it via `vfeature_event_display.php` view. Similarly, the path `/event/upload` is managed by `CfeatureEventUpload.php`, which processes form submissions from `vfeature_event_form.php` view through the same model, `MfeatureEvent.php`. This model performs its database operations using `DaoFeatureEvent.php` for direct database interactions, while `DtoFeatureEvent.php` is used for clean data transmission between the controllers and models. The frontend dynamics, such as DOM manipulations and AJAX requests, are handled by JavaScript files `event_display.js` for display functionality and `event_form.js` for form interactions. All these components are styled cohesively using `style.css` to ensure a uniform appearance across different views."
+authors = ["AutoGPT <info@agpt.co>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+pydantic = "*"
+bcrypt = "^3.2.0"
+fastapi = "*"
+prisma = "*"
+uvicorn = "*"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
